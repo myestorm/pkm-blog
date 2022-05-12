@@ -1,0 +1,27 @@
+<%
+const _list = []
+_list.unshift({
+  title: '首页',
+  url: '/'
+})
+_list.push({
+  title: '设计文章',
+  url: '/folder'
+})
+%>
+<div class="breadcrumbs">
+  <ul class="breadcrumbs-ul">
+    <% _list.map((item, index) => { %>
+    <li>
+      <a href="<%= item.url %>" class="link-text">
+        <%= item.title %>
+      </a>
+      <% if (index != _list.length - 1) { %>
+      <i class="icon icon-chevron-right">
+        <%- include('./icons/chevron-right.svg') %>
+      </i>
+      <% } %>
+    </li>
+    <% }) %>
+  </ul> 
+</div>

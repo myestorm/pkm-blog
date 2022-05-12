@@ -1,0 +1,14 @@
+.#{$--prefix}-site-footer {
+  @include center();
+  color: var(--color-text-third);
+  padding: 1.6rem 0;
+  font-size: px2rem(12px);
+  gap: 0.5rem;
+  a {
+    @include link-hover-line();
+    color: var(--color-text-secondary);
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}

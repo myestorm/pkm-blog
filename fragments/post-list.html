@@ -1,0 +1,53 @@
+<div class="post-list">
+  <ul class="post-list-ul">
+    <%
+    const _list1 = [{
+      title: 'web端也支持Crypto加密对象了',
+      cover: '/images/cover/1.jpg',
+      desc: '之前文章有写关于加密的javascript用户密码加密,js密码加密，是很久之前写的了，有点过时。其实web支持前端加密了，喜大普奔，可以不用引入js进行前端加密'
+    }, {
+      title: 'WebComponents使用及引用外部样式方式',
+      cover: '/images/cover/2.jpg',
+      desc: '自定义的 HTML 标签，称为自定义元素（custom element）。根据规范，自定义元素的名称必须包含连词线，用与区别原生的 HTML 元素。所以，不能写成。'
+    }, {
+      title: '纯前端导出pdf',
+      cover: '/images/cover/3.jpg',
+      desc: '本系列给大家介绍js文件系列，包含psd文件上传图层解析，pdf/word/ppt等办公文档在线预览'
+    }, {
+      title: 'css实现网页png/svg等透明图片实时变色功能',
+      cover: '/images/cover/4.jpg',
+      desc: '工作中经常会用到各种图标，我们会要求设计师ued同学放到iconfont中，但是有时候iconfont要求比较高，png或者svg图片没有问题，上传到iconfont中有时候会出现异常情况，ued同学很苦恼'
+    }]
+    %>
+    <% _list1.map(item => { %>
+    <li>
+      <div class="title"><a href="#"><%= item.title %></a></div>
+      <span class="day">
+        <i class="icon icon-clock" size="12">
+          <%- include('./icons/clock.svg') %>
+        </i>
+        2022/06/18 11:18
+      </span>
+      <div class="desc"><%= item.desc %></div>
+      <div class="extra flex">
+        <!-- <a href="#" class="sort">
+          <i class="icon icon-eye" size="14">
+            <%- include('./icons/folder.svg') %>
+          </i> NODEJS
+        </a> -->
+        <div class="tags" flex="auto">
+          <a href="#"># CSS</a>
+          <a href="#"># 各种图标</a>
+          <a href="#"># ued</a>
+        </div>
+        <div class="views">
+          <i class="icon icon-eye" size="12">
+            <%- include('./icons/eye.svg') %>
+          </i>
+          300
+        </div>
+      </div>
+    </li>
+    <% }) %>
+  </ul>
+</div>

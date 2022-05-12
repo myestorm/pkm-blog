@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../fragments/head.html', { title: '首页' }) %>
+  </head>
+  <body class="scrollbar bg-white">
+    <div class="totonoo-page">
+      <%- include('../fragments/header.html') %>
+      <div class="page-header page-article-header">
+        <div class="container cover-content">
+          <%- include('../fragments/breadcrumbs.html') %>
+          <h2 class="article-title">神器两连发！谷歌新出的取色小工具+5个常用的色彩灵感网站</h2>
+          <div class="article-detail">
+            <div class="views" flex="auto">
+              <i class="icon icon-eye" size="12">
+                <%- include('../fragments/icons/eye.svg') %>
+              </i>
+              300
+            </div>
+            <div class="day">
+              <i class="icon icon-clock" size="12">
+                <%- include('../fragments/icons/clock.svg') %>
+              </i>
+              2022/06/10 11:23
+            </div>
+          </div>
+        </div>
+        <div class="cover"><img src="/background/after_rain.jpg"></div>
+      </div>
+      <main class="page-main page-main-article container" id="main">
+        <%- include('../fragments/article-nav.html') %>
+        <article class="document-reader markdown-body">
+          <p>任何语言都需要强调编码风格的一致性。只要是团队开发，每个人都以相同方式编写代码就是至关重要的。这样大家才能方便地互相看懂和维护对方的代码。</p><p>《编写可维护的JavaScript》向开发人员阐述了如何在团队开发中编写具备高可维护性的JavaScript代码，书中详细说明了作为团队一分子，应该怎么写JavaScript。本书内容涵盖了编码风格、编程技巧、自动化、测试等几方面，既包括具体风格和原则的介绍，也包括示例和技巧说明，最后还介绍了如何通过自动化的工具和方法来实现一致的编程风格。</p><p>《编写可维护的JavaScript》作者Nicholas C. Zakas是的Web技术专家，也是《JavaScript高级程序设计》一书的作者。他曾是Yahoo！的首席前端开发工程师，在完成了从一名“独行侠”到“团队精英”的蜕变后，他站在前端工程师的角度提炼出众多的很好编程实践，其中包括很多业内专业所推崇的很好法则，而这些宝贵经验正是本书的核心内容。</p><p>《编写可维护的JavaScript》适合前端开发工程师、JavaScript程序员和学习JavaScript编程的读者阅读，也适合开发团队负责人、项目负责人阅读。运用本书中讲述的技巧和技术，可以使JavaScript团队编程从侠义的个人偏好的阴霾走出来，走向真正的高可维护性、高效能和高水准。</p><h2 id="%E4%B9%A6%E7%B1%8D%E4%BF%A1%E6%81%AF"><a class="header-anchor" href="#%E4%B9%A6%E7%B1%8D%E4%BF%A1%E6%81%AF">¶</a> 书籍信息</h2><table><thead><tr><th>出版社</th><th>ISBN</th><th>出版时间</th><th>分类</th></tr></thead><tbody><tr><td>人民邮电出版社</td><td>9787115310088</td><td>2013-03-01</td><td>计算机/程序设计</td></tr></tbody></table><h2 id="%E4%BD%9C%E8%80%85%E7%AE%80%E4%BB%8B"><a class="header-anchor" href="#%E4%BD%9C%E8%80%85%E7%AE%80%E4%BB%8B">¶</a> 作者简介</h2><p>Nicholas C. Zakas是一名前端开发顾问、作者和演讲家。在Yahoo！供职超过5年时间，在这期间他曾是Yahoo！首页首席前端工程师和YUI库代码贡献者。他著有《JavaScript高级程序设计》、《Ajax高级程序设计》和《高性能JavaScript》等书籍。Zakas倡导了很多最佳实践，包括渐进增强、可访问性、性能、扩展性和可维护性等。他的博客地址是：<a href="http://www.nczonline.net/">http://www.nczonline.net/</a>。他的Twitter是：@slicknet。</p><p>李晶，花名拔赤，淘宝前端工程师，具有多年前端开发经验，在团队协作、组件开发、移动Web App等方面有深入研究，曾经参与淘宝首页、KISSY等项目开发。他翻译过《JavaScript Web富应用开发》、《JavaScript权威指南（第六版）》、《What is Node?》等书籍，热爱分享，喜欢折腾。微博<a href="http://weibo.com/jayli">http://weibo.com/jayli</a>。</p><p>郭凯，花名流火，淘宝前端工程师，喜欢登山，也喜欢夜深人静时一人静静地写代码，折腾过许多小站均未能持久，有In、Juicer等开源项目。钟爱JavaScript，也喜欢Python，自嘲所学杂而不精。博客<a href="http://benben.cc">http://benben.cc</a>。</p><p>张散集，花名一舟，淘宝前端工程师。他主要从事技术管理，负责淘宝网（北京）的新业务技术和前端团队，热爱前端新技术的推广与应用。翻译作品有《JavaScript Web富应用开发》和《JavaScript权威指南（第六版）》。</p><h2 id="%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><a class="header-anchor" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0">¶</a> 读书笔记</h2><p>这本书很短，大约2-3小时就能读完，整个分为三个部分：编程风格、编程实践和自动化。但是对于今时今日来说自动化这部分可以忽略了。构建工具，代码语法检查都已经更新了。webpack、eslint相对之前的工具更加成熟，运用也更加广泛了。由此这本书实际就是说一件事情，如何让多个人写的代码风格看起来相似，代码展示美观，阅读起来方便，让代码看起来是可维护的。</p><h3 id="%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC"><a class="header-anchor" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC">¶</a> 为什么要讨论编程风格</h3><blockquote><p>程序是写给人读的，只是偶尔让计算机执行一下。-- Donald Knuth</p></blockquote><p>对于团队来说，这个很重要。如果一个项目只有你自己用，自己维护，任意风格和写法都是可以，只要你自己看得懂。就团队来说，大家写代码的方式都差不多，才能让代码变得易于阅读和维护。</p><p>厘清2个概念：编程风格（style guideline）和编码规范（code convention）。编程风格是编码规范的一种，用来规约单文件中代码的规划。编码规范还包括：编程最佳实践、文件和目录的规划以及注释等。</p><h3 id="%E6%8E%A8%E8%8D%90%E7%9A%84%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83"><a class="header-anchor" href="#%E6%8E%A8%E8%8D%90%E7%9A%84%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83">¶</a> 推荐的代码规范</h3><ul><li>jQuery核心风格指南（jQuery Core Style Guide）</li><li>Danglas Crockford的JavaScript代码规范（Danglas Crockford's Code Conventions for the JavaScript Programming Language）</li><li>SproutCore风格指南（SproutCore Style Guide）</li><li>Goolge的JavaScript风格指南（Goolgu JavaScript Style Guide）</li><li>Dojo编程风格指南（Dojo Style Guide）</li></ul><h3 id="%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B"><a class="header-anchor" href="#%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B">¶</a> 代码缩进</h3><p>这个单拿出来，因为这个争执没有挺过。就代码视觉展示来说4个空格比2个空格会舒服些，但是不知道怎么回事，我原来一直用4个空格，现在默默变成了2个空格。4个还是2个自由选择，只要一致就行了。</p><h3 id="%E4%BB%A3%E7%A0%81%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><a class="header-anchor" href="#%E4%BB%A3%E7%A0%81%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5">¶</a> 代码最佳实践</h3><p>归根到底就是怎么些js代码，看附录的Javascript编码风格指南。</p><h4 id="%E7%BC%A9%E8%BF%9B"><a class="header-anchor" href="#%E7%BC%A9%E8%BF%9B">¶</a> 缩进</h4><p>每一行的层级由4个空格组成，避免使用Tab进行缩进。</p><pre><code class="language-javascript">// 好的写法
+if (true) {
+  doSomeThing();
+}
+</code></pre><h4 id="%E8%A1%8C%E7%9A%84%E9%95%BF%E5%BA%A6"><a class="header-anchor" href="#%E8%A1%8C%E7%9A%84%E9%95%BF%E5%BA%A6">¶</a> 行的长度</h4><p>每行长度不应超过80个字符。如果一行超过80个字符，应当在一个运算符后换行。下一行应当增加两级缩进（8个字符）。</p><pre><code class="language-javascript">// 好的写法
+doSomeThing(argument1, argument2, aegument3, argument4,
+    argument5);
+
+// 不好的写法：第二行只有4个空格的缩进
+doSomeThing(argument1, argument2, aegument3, argument4,
+  argument5);
+</code></pre><h4 id="%E5%8E%9F%E5%A7%8B%E5%80%BC"><a class="header-anchor" href="#%E5%8E%9F%E5%A7%8B%E5%80%BC">¶</a> 原始值</h4><p>字符串应当始终使用双引号且保持一行，避免在字符串中使用斜线另起一行。</p><p>数字应当使用十进制整数，科学计算法表示整数，十六进制整数，或者十进制浮点小数，小数前后应当至少保留一位数字。避免使用八进制直接量。</p><p>特殊值null除了下述情况下应当避免使用。</p><ul><li>用来初始化一个变量，这个变量可能被赋值为一个对象。</li><li>用来和一个已经初始化的变量比较，这个变量可以是也可以不是一个对象。</li><li>当函数的参数期望是对象时，被用作参数传入。</li><li>当函数的返回值期望是对象时，被用作返回值传出。</li></ul><p>避免使用特殊值undefined。判断一个变量是否定义应当使用typeof操作符。</p><h4 id="%E8%BF%90%E7%AE%97%E7%AC%A6%E9%97%B4%E8%B7%9D"><a class="header-anchor" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E9%97%B4%E8%B7%9D">¶</a> 运算符间距</h4><p>二元预算符前后必须使用一个空格来保持表达式的整洁。操作符包括赋值运算符和逻辑运算符。</p><pre><code class="language-javascript">// 好的写法
+for (var i = 0; i &lt; count; i++) {
+  process(i);
+}
+
+// 不好的写法：丢失了空格
+for (var i=0; i&lt;count; i++) {
+  process(i);
+}
+</code></pre><h4 id="%E6%8B%AC%E5%8F%B7%E9%97%B4%E8%B7%9D"><a class="header-anchor" href="#%E6%8B%AC%E5%8F%B7%E9%97%B4%E8%B7%9D">¶</a> 括号间距</h4><p>当使用括号时，紧接左括号之后和紧接右括号之前不应该有空格。</p><pre><code class="language-javascript">// 好的写法
+for (var i = 0; i &lt; count; i++) {
+  process(i);
+}
+
+// 不好的写法：参数两边有额外的空格
+for (var i = 0; i &lt; count; i++) {
+  process( i );
+}
+</code></pre><h4 id="%E5%AF%B9%E8%B1%A1%E7%9B%B4%E6%8E%A5%E9%87%8F"><a class="header-anchor" href="#%E5%AF%B9%E8%B1%A1%E7%9B%B4%E6%8E%A5%E9%87%8F">¶</a> 对象直接量</h4><p>对象直接量应当有如下格式。</p><ul><li>起始左花括号应当同表达式保持同一行。</li><li>每个属性的名值对应当保持一个缩进，第一个属性应当在左花括号后另起一行。</li><li>每个属性的名值对应当使用不含引号的属性名，其后紧跟一个冒号（之前不舍空格），其后是值。</li><li>倘若属性值是函数类型，函数体应当在属性名之下另起一行，而且其前后均应保留一个空行。</li><li>一组相关的属性前后可以插入空行以提升代码的可读性。</li><li>结束的右花括号应当独占一行。</li></ul><pre><code class="language-javascript">// 好的写法
+var object = {
+
+  key1: value1,
+  key2: value2,
+
+  func: function() {
+  // doSomeThing
+  },
+
+  key3: value3
+};
+
+// 不好的写法：不恰当的缩进
+var object = {
+    key1: value1,
+    key2: value2
+  };
+
+// 不好的写法：函数体周围缺少空行
+var object = {
+
+  key1: value1,
+  key2: value2,
+  func: function() {
+  // doSomeThing
+  },
+  key3: value3
+};
+</code></pre><p>当对象字面量作为函数参数时，如果值是变量，起始花括号应当同函数名在同一行。所有其余先前列出的规则同样适用。</p><pre><code class="language-javascript">// 好的写法
+doSomeThing({
+  key1: value1,
+  key2: value2
+});
+// 不好的写法：所有代码在一行上
+doSomeThing({ key1: value1, key2: value2 });
+</code></pre><h4 id="%E6%B3%A8%E9%87%8A"><a class="header-anchor" href="#%E6%B3%A8%E9%87%8A">¶</a> 注释</h4><p>使用简洁明了注释有助于他人理解你的代码。如下情况应当使用注释。</p><ul><li>代码晦涩难懂。</li><li>可能被误认为错误的代码。</li><li>必要但不明显的针对特定浏览器的代码。</li><li>对于对象、方法或者属性，生成文档是有必要的（使用恰当的文档注释）。</li></ul><p>单行注释</p><p>单行注释应当用来说明一行代码或者一组相关的代码。单行注释可能有三种使用方式。</p><ul><li>独占一行的注释，用来解释下一行代码。</li><li>在代码行的尾部的注释，用来解释它之前的代码。</li><li>多行，用来注释掉一个代码块。</li></ul><pre><code class="language-javascript">// 好的写法
+if (condition) {
+
+  // 如果代码执行到这里，则表明通过了所有安全检查
+  allowed();
+}
+
+// 不好的写法：注释之前没有空行
+if (condition) {
+  // 如果代码执行到这里，则表明通过了所有安全检查
+  allowed();
+}
+
+// 不好的写法：错误的缩进
+if (condition) {
+
+// 如果代码执行到这里，则表明通过了所有安全检查
+  allowed();
+}
+
+// 不好的写法：应当使用多行注释
+// 这段代码进行**判断
+// 然后执行
+if (condition) {
+
+  // 如果代码执行到这里，则表明通过了所有安全检查
+  allowed();
+}
+
+// 好的写法：在行尾注释时，代码结尾和注释间应保留一个空格
+if (condition) {
+
+  // 如果代码执行到这里，则表明通过了所有安全检查
+  allowed(); // 执行**函数
+}
+
+// 不好的写法：代码和注释间没有足够的空格
+if (condition) {
+
+  // 如果代码执行到这里，则表明通过了所有安全检查
+  allowed();// 执行**函数
+}
+
+// 好的写法：在注释掉一个代码块时，应联系使用单行注释，多行注释不应当使用在此种情况下。
+// if (condition) {
+//   allowed();//执行**函数
+// }
+</code></pre><p>多行注释</p><p>多行注释应当在代码需要更多文字去解释的时候使用。每个多行注释都至少有如下三行：</p><ol><li>首行仅仅包括/*注释开始。该行不应当有其他文字。</li><li>接下来的行以*开头并保持左对齐。这些可以有文字描述。</li><li>最后一行以*/开头并同先前行保持对齐。也不应有其他文字。</li></ol><p>多行注释的首行应当保持同它描述代码的相同层次的缩进。后续的每行应当有同样层次的缩进并附加一个空格（为了适当保持*字符的对齐）。每一个多行代码之前应当预留一个空行。</p><pre><code class="language-javascript">// 好的写法
+if (condition) {
+
+  /*
+  * 如果代码执行到这里
+  * 说明通过了所有的安全检测
+  */
+  allowed();
+}
+</code></pre><p>注释声明</p><p>注释有时候也可以用来给一段代码声明额外的信息。这些声明的格式以单个单词打头并紧跟一个冒号。可以使用的声明如下。</p><ul><li>TODO：说明代码还未完成。应当包含下一步要做的事情。</li><li>HACK：表明代码实现走了一个捷径。应当包含为何使用hack的原因。这也可能表明该问题可能会有更好的解决办法。</li><li>XXX：说明代码是有问题的并应当尽快修复。</li><li>FIXME：说明代码是有问题的并应尽快修复。重要性略次于XXX。</li><li>REVIEW：说明代码在任何可能的改动都需要评审。</li></ul><p>这些声明可能在一行或者多行注释中使用，并且应当遵循同一般注释类型相同的格式规则。</p><h4 id="%E5%91%BD%E5%90%8D"><a class="header-anchor" href="#%E5%91%BD%E5%90%8D">¶</a> 命名</h4><p>变量和函数在命名时应当小心。命名应紧限于数字字母字符，某些情况下可以使用下划线(_)。最好不要在任何命名中使用美元符号($)或者反斜杠()。</p><p>变量命名应当采用驼峰命名格式，首字母小写，每个单词首字母大写。变量名的第一个单词应当是一个名词(而非动词)以避免同函数混淆。不要在变量名中使用下划线。</p><pre><code class="language-javascript">// 好的写法
+var accountNumber = &quot;test001&quot;;
+
+// 不好的写法：大写字母开头
+var AccountNumber = &quot;test001&quot;;
+
+// 不好的写法：动词开头
+var getAccountNumber = &quot;test001&quot;;
+
+// 不好的写法：使用下划线
+var account_number = &quot;test001&quot;;
+</code></pre><p>函数名也应当采用驼峰命名格式。函数名的第一个单词应当是动词（而非名词）来避免同变量混淆。函数名中最好不要使用下划线。</p><pre><code class="language-javascript">// 好的写法
+function doSomething() {
+  // code
+}
+
+// 不好的写法：大写字母开头
+function DoSomething() {
+  // code
+}
+
+// 不好的写法：名词开头
+function something() {
+  // code
+}
+
+// 不好的写法：使用下划线
+function do_something() {
+  // code
+}
+</code></pre><p>构造函数--通过new运算符创建新对象的函数--也应当以驼峰格式命名并且首字符大写。构造函数名称应当以非动词开头，因为new代表着创建一个对象实例的操作。</p><pre><code class="language-javascript">// 好的写法
+function MyObject() {
+  // code
+}
+
+// 不好的写法：小写字母开头
+function myObject() {
+  // code
+}
+
+// 不好的写法：使用下划线
+function my_object() {
+  // code
+}
+
+// 不好的写法：动词开头
+function getMyObject() {
+  // code
+}
+</code></pre><p>常量（值不会被改变的变量）的命名应当是所有大写字母，不同单词之间单个下划线隔开。</p><pre><code class="language-javascript">// 好的写法
+var TOTAL_COUNT = 10;
+
+// 不好的写法：驼峰形式
+var totalCount = 10;
+
+// 不好的写法：混合形式
+var total_COUNT = 10;
+</code></pre><p>对象的属性同变量的命名规则相同。对象的方法同函数的命名规则相同。如果属性或者方法是私有的，应当在之前加上一个下划线。</p><pre><code class="language-javascript">// 好的写法
+var object = {
+  _count: 10,4
+  _getCount: function() {
+    return this._count;
+  }
+}
+</code></pre><h4 id="%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E"><a class="header-anchor" href="#%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E">¶</a> 变量与函数声明</h4><p>变量声明</p><p>所有的变量在使用前都应当事先定义。变量定义应当放在函数开头，使用一个var表达式每行一个变量。除了首行，所有行都应当多一层缩进以使变量名能够垂直方向对齐。变量定义时应当初始化，并且赋值操作符应当保持一致的缩进。初始化的变量应当在未初始化变量之前。 ES6中请使用 <code>let</code> , <code>const</code> 代替 <code>var</code></p><pre><code class="language-javascript">// 好的写法
+var count = 10,
+  name = &quot;jeri&quot;,
+  found = false,
+  empty;
+</code></pre><p>函数声明</p><p>函数应当在使用前提前定义。一个不是作为方法的函数（也就是说没有作为一个对象的属性）应当使用函数定义的格式（不是函数表达式和Function构造器格式）。函数名和开始圆括号之间不应当有空格。结束的圆括号和右边的花括号之间应当留一个空格。右侧的花括号应当同function关键字保持同一行。开始和结束括号之间不应该有空格。参数名之间应当在逗号之后保留一个空格。函数体应当保持一级缩进。</p><pre><code class="language-javascript">// 好的写法
+function outer() {
+  var count = 10,
+    name = &quot;jeri&quot;,
+    found = false,
+    empty;
+  function inner() {
+    // code
+  }
+  // 调用inner()的代码
+}
+</code></pre><p>匿名函数可能作为方法赋值给对象，或者作为其他函数的参数。function关键字同开始括号之间不应有空格。</p><pre><code class="language-javascript">// 好的写法
+object.method = function() {
+  // code
+};
+
+// 不好的写法：不正确的空格
+object.method = function () {
+  // code
+};
+</code></pre><p>立即被调用的函数应当在函数调用的外层用园括号包裹。</p><pre><code class="language-javascript">// 好的方法
+var value = (function() {
+
+  // 函数体
+
+  return {
+    message:&quot;hi&quot;
+  }
+}());
+</code></pre><p>严格模式</p><p>严格模式应当仅限在函数内部使用，千万不要在全局使用。</p><pre><code class="language-javascript">// 不好的写法：全局使用严格模式
+&quot;use strict&quot;;
+
+function doSomething() {
+  // code
+}
+
+// 好的写法
+function doSomething() {
+  &quot;use strict&quot;;
+
+  // code
+}
+</code></pre><h4 id="%E8%BF%90%E7%AE%97%E7%AC%A6"><a class="header-anchor" href="#%E8%BF%90%E7%AE%97%E7%AC%A6">¶</a> 运算符</h4><p>赋值 给变量赋值时，如果右侧是含有比较语句的表达式，需要用圆括号包裹。</p><pre><code class="language-javascript">// 好的写法
+var flag = (i &lt; count);
+
+// 不好的写法：遗漏圆括号
+var flag = i &lt; count;
+</code></pre><p>等号运算符 使用===（严格相等）和!==（严格不相等）代替==（相等）和!=（不等）来避免弱类型转换错误。</p><pre><code class="language-javascript">// 好的写法
+var same = (a === b);
+
+// 好的写法
+var same = (a == b);
+</code></pre><p>三元操作符 三元运算符应当仅仅用在条件赋值语句中，而不要作为if语句的替代品。</p><pre><code class="language-javascript">// 好的写法
+var value = condition ? value1 : value2;
+
+// 不好的写法：没有赋值，应当使用if表达式
+condition ? doSomething() : doSomethingElse;
+</code></pre><h4 id="%E8%AF%AD%E5%8F%A5"><a class="header-anchor" href="#%E8%AF%AD%E5%8F%A5">¶</a> 语句</h4><p>简单语句</p><p>每一行最多只包含一条语句。所有简单的语句都应该以分号(;)结束。</p><pre><code class="language-javascript">// 好的写法
+count++;
+a = b;
+
+// 不好的写法：多个表达式写在一行
+count++; a = b;
+</code></pre><p>返回语句</p><p>返回语句当返回一个值的时候不应当使用圆括号包裹，除非在某些情况下这么做可以让返回值更容易理解。例如：</p><pre><code class="language-javascript">return;
+
+return collection.size();
+
+return (size &gt; 0 ? size : defaultSize);
+</code></pre><p>复合语句</p><p>复合语句是大括号括起来的语句列表。</p><ul><li>括起来的语句应当较复合语句多缩进一个层级。</li><li>开始的大括号应当在复合语句所在行的末尾；结束的大括号应当独占一行且同复合语句的开始保持同样的缩进。</li><li>当语句是控制结构的一部分时，诸如if或者for语句，所有语句都需要用大括号括起来，也包括单个语句。这个约定使得我们更方便地添加语句而不用担心忘记加括号而引起bug。</li><li>像if一样的语句开始的关键词，其后应该紧跟一个空格，起始大括号应当在空格之后。</li></ul><p>if 语句</p><p>if 语句应当是下面的格式。</p><pre><code class="language-javascript">if (condition) {
+  statements
+}
+
+if (condition) {
+  statements
+} else {
+  statements
+}
+
+if (condition) {
+  statements
+} else if (condition) {
+  statements
+} else {
+  statements
+}
+</code></pre><p>绝不允许在if语句中省略花括号。</p><pre><code class="language-javascript">// 好的写法
+if (condition) {
+  doSomething();
+}
+
+// 不好的写法：不恰当的空格
+if (condition){
+  doSomething();
+}
+
+// 不好的写法：所有代码都在一行
+if (condition) { doSomething(); }
+
+// 不好的写法：所有代码都在一行且没有花括号
+if (condition) doSomething();
+</code></pre><p>for 语句</p><p>for类型的语句应当是下面的格式。</p><pre><code class="language-javascript">for (initialization; condition; update) {
+  statements
+}
+
+for (variable in object) {
+  statements
+}
+</code></pre><p>for语句的初始化部分不应当有变量声明。</p><pre><code class="language-javascript">// 好的方法
+var i,
+  len;
+
+for (i=0, len=0; i &lt; len; i++) {
+  // code
+}
+
+// 不好的写法：初始化时候声明变量
+for (var i=0, len=0; i &lt; len; i++) {
+  // code
+}
+
+// 不好的写法：初始化时候声明变量
+for (var prop in object) {
+  // code
+}
+</code></pre><p>当使用for-in语句时，记得使用hasOwnProperty()进行双重检查来过滤对象的成员。</p><p>while 语句</p><p>while 类的语句应当是下面的格式。</p><pre><code class="language-javascript">while (condition) {
+  statements
+}
+</code></pre><p>do 语句</p><p>do 类的语句应当是下面的格式。</p><pre><code class="language-javascript">do {
+  statements
+} while (condition);
+</code></pre><p>switch 语句</p><p>switch 类的语句应当是如下格式。</p><pre><code class="language-javascript">switch (expression) {
+  case expression:
+    statements
+
+  default:
+    statements
+}
+</code></pre><p>switch下的第一个case都应当保持一个缩进。除第一个之外包括default在内的每一个case都应当在之前保持一个空行。</p><p>每一组语句（除了default）都应当以break、return、throw结尾，或者用一行注释表示跳过。</p><pre><code class="language-javascript">// 好的写法
+switch (value) {
+  case 1:
+    /* falls through */
+
+  case 2:
+    doSomething();
+    break;
+
+  case 3:
+    return true;
+
+  default:
+    throw new Error(&quot;Some error&quot;);
+}
+</code></pre><p>如果一个switch语句不包含default情况，应当用一行注释代替。</p><pre><code class="language-javascript">// 好的写法
+switch (value) {
+  case 1:
+    /* falls through */
+
+  case 2:
+    doSomething();
+    break;
+
+  case 3:
+    return true;
+
+  default:
+    // 没有default
+}
+</code></pre><p>try 语句</p><p>try类的语句应当格式如下。</p><pre><code class="language-javascript">try {
+  statements
+} catch (variable) {
+  statements
+}
+
+try {
+  statements
+} catch (variable) {
+  statements
+} finally {
+  statements
+}
+</code></pre><h4 id="%E7%95%99%E7%99%BD"><a class="header-anchor" href="#%E7%95%99%E7%99%BD">¶</a> 留白</h4><p>在逻辑相关的代码之间添加空行代码可以提高代码的可读性。</p><p>两行空行仅限于在如下情况下使用：</p><ul><li>在不同的源代码文件之间。</li><li>在类和接口定义之间。</li></ul><p>单行空行仅限在如下情况中使用。</p><ul><li>方法之间。</li><li>方法中局部变量和第一行语句之间。</li><li>多行或者单行注释之前。</li><li>方法中逻辑代码块之间以提升代码的可读性。</li></ul><p>空格应当在如下的情况下使用。</p><ul><li>关键词后跟括号的情况应当用空格隔开。</li><li>参数列表中逗号之后应当保留一个空格。</li><li>所有的除了点(.)之外的二元运算符，其操作数都应当用空格隔开。单目运算符的操作数之间不应该用空白隔开，例如一元减号，递增(++)，递减(--)。</li><li>for 语句的表达式之间应当用空格隔开。</li></ul><h4 id="%E9%9C%80%E8%A6%81%E9%81%BF%E5%85%8D%E7%9A%84"><a class="header-anchor" href="#%E9%9C%80%E8%A6%81%E9%81%BF%E5%85%8D%E7%9A%84">¶</a> 需要避免的</h4><ul><li>切勿使用像String一类的原始包装类型创建新的对象。</li><li>避免使用eval()。</li><li>避免使用with语句。该语句在严格模式中不复存在，可能在未来的ECMAScript标准中也将去除。</li></ul><h3 id="%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><a class="header-anchor" href="#%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5">¶</a> 编程实践</h3><blockquote><p>构建软件设计的方法有两种：一种是把软件做得很简单以至于明显找不到缺陷；另一种是把它做得很复杂以致于找不到明显的缺陷。-- C.A.R. Hoare，1980年图灵奖获得者</p></blockquote><h4 id="ui%E7%9A%84%E6%9D%BE%E8%80%A6%E5%90%88"><a class="header-anchor" href="#ui%E7%9A%84%E6%9D%BE%E8%80%A6%E5%90%88">¶</a> UI的松耦合</h4><p>html、css和javascript三者之间的关系</p><p><img src="./images/table.gif" alt="html、css和javascript三者之间的关系"></p><p>松耦合的意思就是，组件之间联系尽量不要那么紧密，修改A组件不需要连带修改B组件。</p><ul><li>将JavaScript从css中抽离</li><li>将css从中JavaScript抽离</li><li>将JavaScript从html中抽离</li><li>将html从中JavaScript抽离 (利用JS模板引擎)</li></ul><h4 id="%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><a class="header-anchor" href="#%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">¶</a> 避免使用全局变量</h4><p>单全局变量：命名空间和模块模式 零全局变量：</p><pre><code class="language-javascript">(function(win) {
+  'use strict';
+  
+  var doc = win.document;
+  
+  // 其他代码逻辑
+})(window);
+</code></pre><h4 id="%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><a class="header-anchor" href="#%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86">¶</a> 事件处理</h4><pre><code class="language-javascript">// 不好的写法
+function handleClick(event) {
+  var popup = document.getElementById(&quot;popup&quot;);
+  popup.style.left = event.clientX + &quot;px&quot;;
+  popup.style.top = event.clientY + &quot;px&quot;;
+  popup.className = &quot;reveal&quot;;
+}
+addListener(element, &quot;click&quot;, handleClick)
+</code></pre><p>规则一：隔离应用逻辑</p><pre><code class="language-javascript">// 好的写法 - 拆分应用逻辑
+var MyApplication = {
+  handleClick: function(event) {
+    this.showPopup(event)
+  },
+
+  showPopup: function(event) {
+    var popup = document.getElementById(&quot;popup&quot;);
+    popup.style.left = event.clientX + &quot;px&quot;;
+    popup.style.top = event.clientY + &quot;px&quot;;
+    popup.className = &quot;reveal&quot;;
+  }
+
+};
+addListener(element, &quot;click&quot;, function(event) {
+  MyApplication.handleClick(event);
+})
+</code></pre><p>规则二：不要分发事件对象</p><pre><code class="language-javascript">// 好的写法
+var MyApplication = {
+  handleClick: function(event) {
+    this.showPopup(event.clientX, event.clientY)
+  },
+
+  showPopup: function(x, y) {
+    var popup = document.getElementById(&quot;popup&quot;);
+    popup.style.left = x + &quot;px&quot;;
+    popup.style.top = y + &quot;px&quot;;
+    popup.className = &quot;reveal&quot;;
+  }
+
+};
+addListener(element, &quot;click&quot;, function(event) {
+  MyApplication.handleClick(event); // 可以这样用
+})
+</code></pre><p>当处理事件时，最好让事件处理程序成为接触到event对象的唯一的函数。事件处理程序应当在进入应用逻辑之前针对event对象执行任何必要的操作，包括阻止默认事件或阻止事件冒泡，都应当直接包含在事件处理程序中。</p><pre><code class="language-javascript">// 好的写法
+var MyApplication = {
+  handleClick: function(event) {
+
+    // 假设事件支持 DOM Level12
+    event.preventDefault();
+    event.stopPropagation();
+
+    // 传入应用逻辑
+    this.showPopup(event.clientX, event.clientY)
+  },
+
+  showPopup: function(x, y) {
+    var popup = document.getElementById(&quot;popup&quot;);
+    popup.style.left = x + &quot;px&quot;;
+    popup.style.top = y + &quot;px&quot;;
+    popup.className = &quot;reveal&quot;;
+  }
+
+};
+addListener(element, &quot;click&quot;, function(event) {
+  MyApplication.handleClick(event); // 可以这样用
+})
+</code></pre><h4 id="%E9%81%BF%E5%85%8D%E2%80%9C%E7%A9%BA%E6%AF%94%E8%BE%83%E2%80%9D"><a class="header-anchor" href="#%E9%81%BF%E5%85%8D%E2%80%9C%E7%A9%BA%E6%AF%94%E8%BE%83%E2%80%9D">¶</a> 避免“空比较”</h4><p>检测原始值</p><p>JavaScript有5中简单的原始类型：字符串、数字、布尔值、null和undefined。最佳的选择是用typeof运算符，返回一个值的类型的字符串。 用typeof检测一下4种原始值类型是非常安全的。</p><pre><code class="language-javascript">//检测字符串
+if (typeof name === &quot;string&quot;) {
+  anotherName = name.substring(3);
+}
+
+//检测数字
+if (typeof count === &quot;number&quot;) {
+  updateCount(count)；
+}
+
+//检测布尔值
+if (typeof found === &quot;boolean&quot; &amp;&amp; found){
+  message(&quot;Found!&quot;);
+}
+
+//检测underfined
+if (typeof MyApp=== &quot;undefined&quot;) {
+  MyApp = {};
+}
+</code></pre><p>检测引用值</p><p>引用值也称为对象，检测某个引用值的类型的官方最好的方法是使用instanceof运算符。但是它不仅检测构造这个对象的构造器，还检测原型链。因为每个对象都继承自Object，因此每个对象的 value instanceof Object都会返回true。</p><pre><code class="language-javascript">var now = new Date();
+console.log(now instanceof object); // true
+console.log(now instanceof Date); // true
+</code></pre><p>检测数组</p><p>最开始是判断sort()方法在不在。</p><pre><code class="language-javascript">function  isArray(value) {
+  return typeof value.sort === &quot;function&quot;;
+}
+</code></pre><p>然后有了一种比较优雅的解决方案。</p><pre><code class="language-javascript">function isArray() {
+  return Object.prototype.toString.call(value) === &quot;[object Array]&quot;;
+}
+</code></pre><p>再后来ECMAScript5将Array.isArray()正式引入JavaScript。</p><p>检测属性</p><p>判断属性是否存在的最好的方法是使用in运算符。in运算符只会简单地判断属性是否存在，而不会去读属性的值。但是检测出来的属性可以是对象自身的，也可以是继承来的。</p><pre><code class="language-javascript">var object = {
+  count: 0,
+  related: null
+};
+if (&quot;count&quot; in object) {
+  //这里的代码会执行
+}
+</code></pre><p>如果只检查对象自身的某个属性是否存在，就使用hasOwnProperty()方法。</p><h4 id="%E5%B0%86%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E4%BB%8E%E4%BB%A3%E7%A0%81%E4%B8%AD%E5%88%86%E7%A6%BB%E5%87%BA%E6%9D%A5"><a class="header-anchor" href="#%E5%B0%86%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E4%BB%8E%E4%BB%A3%E7%A0%81%E4%B8%AD%E5%88%86%E7%A6%BB%E5%87%BA%E6%9D%A5">¶</a> 将配置数据从代码中分离出来</h4><ul><li>URL</li><li>需要展现给用户的字符串</li><li>重复的值</li><li>设置（比如每页的配置项）</li><li>任何可能发生变更的值</li><li>类似于各种工具化文件的config</li></ul><h4 id="%E6%8A%9B%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF"><a class="header-anchor" href="#%E6%8A%9B%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF">¶</a> 抛出自定义错误</h4><ul><li>Error: 所有的错误类型。实际上引擎从来不会抛出该类型的错误。</li><li>EvalError: 通过eval()函数执行代码发生错误时抛出。</li><li>RangeError: 一个数字超出它的边界时抛出。</li><li>ReferenceError: 期望的对象不存在时抛出。</li><li>SyntaxError: 给eval()函数传递的代码中有语法错误时抛出。</li><li>TypeError: 变量不是期望的类型时抛出。</li></ul><h4 id="%E4%B8%8D%E6%98%AF%E4%BD%A0%E7%9A%84%E5%AF%B9%E8%B1%A1%E4%B8%8D%E8%A6%81%E5%8A%A8"><a class="header-anchor" href="#%E4%B8%8D%E6%98%AF%E4%BD%A0%E7%9A%84%E5%AF%B9%E8%B1%A1%E4%B8%8D%E8%A6%81%E5%8A%A8">¶</a> 不是你的对象不要动</h4><p>防止扩展 禁止为对象“添加”属性和方法，但已存在的属性和方法是可以被修改或删除。</p><pre><code class="language-javascript">Object.preventExtension(); // 锁定对象
+Object.isExtensible(); // 判断对象是否被锁定
+</code></pre><p>密封 类似“防止扩展”，而且禁止为对象“删除”已存在的属性和方法。</p><pre><code class="language-javascript">Object.seal(); // 密封对象
+Object.isSealed(); // 检测一个对象是否已被密封
+</code></pre><p>冻结 类似“密封”，而且禁止为对象“删除”已存在的属性和方法。</p><pre><code class="language-javascript">Object.freeze(); // 冻结对象
+Object.isFrozen(); // 判断一个对象是否已被冻结
+</code></pre><h4 id="%E6%B5%8F%E8%A7%88%E5%99%A8%E5%97%85%E6%8E%A2"><a class="header-anchor" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%97%85%E6%8E%A2">¶</a> 浏览器嗅探</h4><ul><li>User-Agent 检测</li><li>避免特性推断</li><li>避免浏览器推断</li></ul><p>对于今天来说，这个基本可以退出舞台。按照新标准走就好了，大部分浏览器都是按照标准走了，除非一些实验性特性。</p><h2 id="%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><a class="header-anchor" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E">¶</a> 写在最后</h2><p>上述指南并不是在开发过程中必须完全遵守的，我们可以只汲取其中的一部分来改善自己的编码风格，让自己的代码易读、可维护。关于编码风格，每个团队都有自己的特色，只要保持团队一致性，可以高效的开发就OK了。没有绝对的准则，只有适不适合。</p>
+        </article>
+        <div id="article-hgroups" class="article-hgroups scrollbar"><ul class="article-hgroups-ul"><li class="h2 current" data-index="0"><a href="#%E4%B9%A6%E7%B1%8D%E4%BF%A1%E6%81%AF">书籍信息</a></li><li class="h2" data-index="1"><a href="#%E4%BD%9C%E8%80%85%E7%AE%80%E4%BB%8B">作者简介</a></li><li class="h2" data-index="2"><a href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0">读书笔记</a></li><li class="h3" data-index="3"><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC">为什么要讨论编程风格</a></li><li class="h3" data-index="4"><a href="#%E6%8E%A8%E8%8D%90%E7%9A%84%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83">推荐的代码规范</a></li><li class="h3" data-index="5"><a href="#%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B">代码缩进</a></li><li class="h3" data-index="6"><a href="#%E4%BB%A3%E7%A0%81%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5">代码最佳实践</a></li><li class="h4" data-index="7"><a href="#%E7%BC%A9%E8%BF%9B">缩进</a></li><li class="h4" data-index="8"><a href="#%E8%A1%8C%E7%9A%84%E9%95%BF%E5%BA%A6">行的长度</a></li><li class="h4" data-index="9"><a href="#%E5%8E%9F%E5%A7%8B%E5%80%BC">原始值</a></li><li class="h4" data-index="10"><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E9%97%B4%E8%B7%9D">运算符间距</a></li><li class="h4" data-index="11"><a href="#%E6%8B%AC%E5%8F%B7%E9%97%B4%E8%B7%9D">括号间距</a></li><li class="h4" data-index="12"><a href="#%E5%AF%B9%E8%B1%A1%E7%9B%B4%E6%8E%A5%E9%87%8F">对象直接量</a></li><li class="h4" data-index="13"><a href="#%E6%B3%A8%E9%87%8A">注释</a></li><li class="h4" data-index="14"><a href="#%E5%91%BD%E5%90%8D">命名</a></li><li class="h4" data-index="15"><a href="#%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E">变量与函数声明</a></li><li class="h4" data-index="16"><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6">运算符</a></li><li class="h4" data-index="17"><a href="#%E8%AF%AD%E5%8F%A5">语句</a></li><li class="h4" data-index="18"><a href="#%E7%95%99%E7%99%BD">留白</a></li><li class="h4" data-index="19"><a href="#%E9%9C%80%E8%A6%81%E9%81%BF%E5%85%8D%E7%9A%84">需要避免的</a></li><li class="h3" data-index="20"><a href="#%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5">编程实践</a></li><li class="h4" data-index="21"><a href="#ui%E7%9A%84%E6%9D%BE%E8%80%A6%E5%90%88">UI的松耦合</a></li><li class="h4" data-index="22"><a href="#%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">避免使用全局变量</a></li><li class="h4" data-index="23"><a href="#%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86">事件处理</a></li><li class="h4" data-index="24"><a href="#%E9%81%BF%E5%85%8D%E2%80%9C%E7%A9%BA%E6%AF%94%E8%BE%83%E2%80%9D">避免“空比较”</a></li><li class="h4" data-index="25"><a href="#%E5%B0%86%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E4%BB%8E%E4%BB%A3%E7%A0%81%E4%B8%AD%E5%88%86%E7%A6%BB%E5%87%BA%E6%9D%A5">将配置数据从代码中分离出来</a></li><li class="h4" data-index="26"><a href="#%E6%8A%9B%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF">抛出自定义错误</a></li><li class="h4" data-index="27"><a href="#%E4%B8%8D%E6%98%AF%E4%BD%A0%E7%9A%84%E5%AF%B9%E8%B1%A1%E4%B8%8D%E8%A6%81%E5%8A%A8">不是你的对象不要动</a></li><li class="h4" data-index="28"><a href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%97%85%E6%8E%A2">浏览器嗅探</a></li><li class="h2" data-index="29"><a href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E">写在最后</a></li></ul></div>
+      </main>
+      <%- include('../fragments/footer.html') %>
+    </div>
+    <script type="module" src="/src/scripts/article.ts"></script>
+  </body>
+</html>

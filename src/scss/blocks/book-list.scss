@@ -1,0 +1,69 @@
+.book-list {
+  padding: 1rem 0;
+  &-ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    li {
+      @include transition();
+      background-color: var(--color-bg);
+      border-radius: px2rem(8px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+      &:hover {
+        box-shadow: 0 0 30px rgba(var(--rgb-black), 0.05);
+      }
+      a {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+    .cover {
+      border-radius: px2rem(4px);
+      overflow: hidden;
+      background-color: rgba(var(--rgb-black), 1);
+      &::before {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";
+        background-image: radial-gradient(rgba(var(--rgb-black), 0.04) 60%, rgba(var(--rgb-black), 0.5) 100%);
+        z-index: 1;
+      }
+      img {
+        @include transition();
+      }
+    }
+    .info {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 0.5rem 1rem;
+      background-color: rgba(var(--rgb-black), 0.5);
+      color: var(--color-white);
+      z-index: 2;
+    }
+    .title, .author {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .author {
+      font-size: px2rem(12px);
+      color: rgba(var(--rgb-white), 0.8);
+    }
+  }
+}

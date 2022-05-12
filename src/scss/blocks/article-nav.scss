@@ -1,0 +1,30 @@
+$prefix: 'article-nav';
+.#{$prefix} {
+  @include transition('top');
+  background-color: var(--color-article-nav-bg);
+  border-radius: px2rem(8px);
+  line-height: px2rem(36px);
+  display: none;
+  ul.#{$prefix}-ul {
+    width: 100%;
+    padding: 1rem;
+    li {
+      a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border-radius: px2rem(8px);
+        padding: 0 0 0 0.5rem;
+        color: var(--color-text-secondary);
+        &:hover {
+          color: var(--color-primary);
+        }
+        &.current {
+          color: var(--color-primary);
+          background-color: rgba(var(--rgb-primary), 0.08);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<div class="book-list">
+  <ul class="book-list-ul">
+    <%
+    const _list1 = [{
+      title: '内向者优势 [The Introvert Advantage:How to Thrive in an Extrov] ',
+      cover: '/images/book/1.jpg',
+      author: '[美] 马蒂·奥尔森·兰妮'
+    }, {
+      title: '如何形成清晰的观点',
+      cover: '/images/book/2.jpg',
+      author: '[美] 查尔斯·S.皮尔士'
+    }, {
+      title: '思考，快与慢',
+      cover: '/images/book/3.jpg',
+      author: '[美] 丹尼尔·卡尼曼'
+    }, {
+      title: '自我观察：第四道入门手册',
+      cover: '/images/book/4.jpg',
+      author: '[美] 雷德·霍克'
+    }]
+    %>
+    <% _list1.map(item => { %>
+    <li>
+      <a href="#">
+        <div class="cover"><img src="<%= item.cover %>" alt="<%= item.title %>"></div>
+        <div class="info">
+          <div class="title"><%= item.title %></div>
+          <div class="author"><%= item.author %></div>
+        </div>
+      </a>
+    </li>
+    <% }) %>
+  </ul>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./fragments/head.html', { title: '首页' }) %>
+  </head>
+  <body class="scrollbar">
+    <div class="totonoo-page">
+      <%- include('./fragments/header.html') %>
+      <div class="page-header">
+        <div class="container cover-content">
+          <%- include('./fragments/breadcrumbs.html') %>
+          <h2 class="title">全部文章</h2>
+          <%- include('./fragments/sub-nav.html') %>
+        </div>
+        <div class="cover"><img src="/background/after_rain.jpg"></div>
+      </div>
+      <main class="page-main container">
+        <%- include('./fragments/book-list.html') %>
+        <%- include('./fragments/post-list.html') %>
+        <%- include('./fragments/post-cover-desc.html') %>
+        <%- include('./fragments/pagination.html') %>
+      </main>
+      <%- include('./fragments/footer.html') %>
+    </div>
+    <script type="module" src="/src/scripts/index.ts"></script>
+  </body>
+</html>

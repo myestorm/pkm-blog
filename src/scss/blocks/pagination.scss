@@ -1,0 +1,42 @@
+.pagination {
+  padding: 1rem 0;
+  &-ul {
+    @include center();
+    gap: 0.4rem;
+    align-items: stretch;
+    li {
+      @include flex-line();
+      align-items: stretch;
+      a, span {
+        @include flex-line();
+        @include transition();
+        background-color: var(--color-bg);
+        padding: 0.4rem 0.8rem;
+        border-radius: px2rem(4px);
+        text-decoration: none;
+        color: var(--color-text);
+        font-size: px2rem(14px);
+      }
+      a {
+        &:hover {
+          background-color: rgba(var(--rgb-black), 0.03);
+          color: var(--color-primary);
+        }
+      }
+      .disabled {
+        color: var(--color-text-disabled);
+        cursor: not-allowed;
+        &:hover {
+          background-color: var(--color-bg);
+          color: var(--color-text-disabled);
+        }
+      }
+      &.current {
+        span {
+          background-color: var(--color-primary);
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+}

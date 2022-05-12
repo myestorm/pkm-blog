@@ -1,0 +1,61 @@
+<%
+const _list = [{
+  title: '全部',
+  url: '/',
+  icon: 'document-text'
+}, {
+  title: '新视野',
+  url: '/',
+  icon: 'document-text'
+}, {
+  title: 'UI',
+  url: '/',
+  icon: 'document-text'
+}, {
+  title: '网页',
+  url: '/',
+  icon: 'document-text'
+}, {
+  title: '平面',
+  url: '/',
+  icon: 'document-text'
+}, {
+  title: '手绘',
+  url: '/',
+  icon: 'document-text'
+}, {
+  title: '电商',
+  url: '/',
+  icon: 'document-text'
+}, {
+  title: '交互',
+  url: '/',
+  icon: 'document-text'
+}]
+%>
+<div class="sub-nav">
+  <ul class="sub-nav-ul top">
+    <% _list.map((item, index) => { %>
+      <li>
+        <a href="<%= item.url %>" class="link-text<%- index == 0 ? ' current' : '' %>">
+          <i class="icon">
+            <%- include(`./icons/${item.icon}.svg`) %>
+          </i>
+          <%= item.title %>
+        </a>
+      </li>
+      <% }) %>
+  </ul>
+  <ul class="sub-nav-ul">
+    <% _list.map((item, index) => { %>
+      <li>
+        <a href="<%= item.url %>" class="link-text<%- index == 0 ? ' current' : '' %>">
+          <i class="icon">
+            <%- include(`./icons/${item.icon}.svg`) %>
+          </i>
+          <%= item.title %>
+        </a>
+      </li>
+      <% }) %>
+  </ul>
+</div>

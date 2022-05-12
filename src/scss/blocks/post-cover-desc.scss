@@ -1,0 +1,108 @@
+.post-cover-desc {
+  padding: 1rem 0;
+  &-ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    li {
+      @include transition();
+      background-color: var(--color-bg);
+      padding: 1rem;
+      border-radius: px2rem(8px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      &:hover {
+        box-shadow: 0 0 30px rgba(var(--rgb-black), 0.05);
+      }
+    }
+    .cover {
+      border-radius: px2rem(4px);
+      overflow: hidden;
+      background-color: rgba(var(--rgb-black), 1);
+      a {
+        width: 100%;
+        display: block;
+        position: relative;
+        &::before {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          content: "";
+          background-image: radial-gradient(rgba(var(--rgb-black), 0), rgba(var(--rgb-black), 1));
+          z-index: 1;
+        }
+        img {
+          @include transition();
+        }
+        &:hover {
+          img {
+            transform: scale(1.4);
+          }
+        }
+      }
+    }
+    .title {
+      a {
+        @include transition();
+        text-decoration: none;
+        color: var(--color-text);
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+        padding-left: px2rem(8px);
+        &:hover {
+          color: var(--color-primary);
+          padding-left: px2rem(12px);
+        }
+        &::before {
+          width: px2rem(3px);
+          height: px2rem(14px);
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          margin-top: px2rem(-8px);
+          background-color: var(--color-primary);
+          border-radius: px2rem(3px);
+          overflow: hidden;
+        }
+      }
+    }
+    .desc {
+      color: var(--color-text-third);
+      font-size: px2rem(12px);
+      max-height: px2rem(54px);
+      overflow: hidden;
+      word-break: break-all;
+      text-align: justify;
+    }
+    .tags {
+      display: flex;
+      gap: 0.8rem;
+      a {
+        @include transition();
+        color: var(--color-primary);
+        &:hover {
+          color: var(--color-anti);
+        }
+      }
+    }
+    .extra {
+      align-items: stretch;
+    }
+    .day, .views {
+      color: var(--color-text-third);
+      text-align: right;
+      font-size: px2rem(12px);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+  }
+}

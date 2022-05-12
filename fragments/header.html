@@ -1,0 +1,59 @@
+<header class="totonoo-site-header" id="site-header">
+  <h2 class="logo">
+    <a href="/">
+      <i class="icon icon-logo">
+        <%- include('./icons/logo.svg') %>
+      </i>
+      <strong>totonoo.com</strong>
+    </a>
+  </h2>
+  <nav class="nav">
+    <%
+    const navs = [{
+      title: '首页',
+      href: '/',
+      icon: 'home'
+    }, {
+      title: '文档',
+      href: '/',
+      icon: 'document-text'
+    }, {
+      title: '书架',
+      href: '/',
+      icon: 'book-open'
+    }]
+    %>
+    <ul class="nav-ul">
+      <% navs.forEach((item, index) => { %>
+      <li<%- index == 0 ? ' class="current"' : ''%>>
+        <a href="<%= item.href %>">
+          <i class="icon icon-home">
+            <%- include(`./icons/${item.icon}.svg`) %>
+          </i>
+          <%= item.title %>
+        </a>
+      </li>
+      <% }) %>
+    </ul>
+  </nav>
+  <div class="user flex">
+    <div class="search">
+      <button class="btn btn-search">
+        <i class="icon icon-search">
+          <%- include('./icons/search.svg') %>
+        </i>
+        搜索
+      </button>
+    </div>
+    <div class="theme-switch">
+      <button class="btn">
+        <i class="icon icon-sun">
+          <%- include('./icons/sun.svg') %>
+        </i>
+      </button>
+    </div>
+    <div class="userinfo flex">
+      <img class="avatar" src="/images/user.png" alt="">
+    </div>
+  </div>
+</header>

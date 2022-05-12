@@ -1,0 +1,13 @@
+.breadcrumbs {
+  &-ul {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    li {
+      @include center();
+      gap: 0.25rem;
+      color: var(--color-text-third);
+      padding: 0.6rem 0;
+    }
+  }
+}
