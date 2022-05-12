@@ -45,12 +45,37 @@ $.when( $.ready ).then(() => {
     articleHgroups.css(articleHgroupsStyle).show()
     isShow = true
   }
+
+  const hgroups = main.find('.markdown-body').find('h1, h2, h3, h4, h5, h6')
+  const navItems = articleHgroups.find('li a')
+  navItems.on('click', function (event: JQuery.Event) {
+    event.preventDefault()
+    const index = navItems.index(this)
+    const top = hgroups.eq(index).offset()?.top || 0
+    $(this).parent('li').addClass('current').siblings().removeClass('current')
+    $('html, body').animate({ scrollTop: top - 80 }, 260);
+  })
+  const scrollSetIndex = (scrollTop: number) => {
+    let idx = 0
+    let offsetTop = 0
+    $.each(hgroups, function (index) {
+      const top = $(this).offset()?.top || 0
+      const _offsetTop = Math.abs(top - scrollTop)
+      if (_offsetTop < offsetTop) {
+        idx = index
+      }
+      offsetTop = _offsetTop
+    })
+    navItems.eq(idx).parent('li').addClass('current').siblings().removeClass('current')
+  }
+
   $(document).on('scroll', function () {
     if (!isShow) {
       return false
     }
 
     const scrollTop = $(this).scrollTop() || 0
+    scrollSetIndex(scrollTop)
     if (scrollTop > top) {
       articleNav.css({
         width: `${articleNavWidth}px`,

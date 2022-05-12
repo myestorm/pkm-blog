@@ -7,6 +7,8 @@ interface IOptionType<T> {
 }
 
 export default function ejsPlugin<T> (option: IOptionType<T> = {}): Plugin {
+  let config
+
   const pageData = option.data || {}
   const regExp = /\<\%\-(.*?)include\(\'(.*?)\'(.*?)\)(.*?)\%\>/gmi
   const includeRelationMap = new Map<string, string[]>()
@@ -14,6 +16,9 @@ export default function ejsPlugin<T> (option: IOptionType<T> = {}): Plugin {
 
   return {
     name: 'vite-plugin-ejs',
+    configResolved(resolvedConfig) {
+      config = resolvedConfig
+    },
     handleHotUpdate (ctx) {
       const { file, server } = ctx
       if (!myExtnames.includes(extname(file))) {
@@ -58,7 +63,7 @@ export default function ejsPlugin<T> (option: IOptionType<T> = {}): Plugin {
         })
 
         // 注入热更新事件
-        if (ctx.server.config.command === 'serve') {
+        if (config.command === 'serve') {
           template += `<script type="module">
             if (import.meta.hot) {
               import.meta.hot.on('ejs-include-update', (data) => {

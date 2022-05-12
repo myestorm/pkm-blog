@@ -121,8 +121,9 @@ body {
   padding: px2rem($--header-height) 0 0;
   .container {
     width: 100%;
-    // max-width: px2rem(1280px);
-    max-width: px2rem(780px);
+    // max-width: px2rem(1200px);
+    // padding: 0 4vw;
+    max-width: px2rem(980px);
     margin: auto;
   }
   .page-header {

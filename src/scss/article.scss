@@ -76,6 +76,7 @@
     }
   }
   li {
+    @include transition();
     border-left: 3px transparent solid;
     &.current {
       border-left-color: var(--color-primary);
@@ -90,4 +91,7 @@
       padding-left: px2rem(12px * ($i - 1));
     }
   }
+}
+.related-articles .post-list ul.post-list-ul {
+  background-color: rgba(var(--rgb-black), 0.03);
 }
