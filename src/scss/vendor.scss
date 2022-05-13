@@ -2,6 +2,7 @@
 @import "./base/reset.scss";
 
 @import "./components/button.scss";
+@import "./components/input.scss";
 
 @import "./blocks/header.scss";
 @import "./blocks/footer.scss";
@@ -34,12 +35,14 @@ body {
   --color-text-disabled: rgba(var(--rgb-text), 0.16);
 
   --color-border: rgb(var(--rgb-border));
+  --color-input-border: rgba(var(--rgb-black), 0.08);
 
   --color-body-bg: rgb(var(--rgb-body-bg));
   --color-body-bg-white: rgb(var(--rgb-white));
   --color-header-bg: rgba(var(--rgb-white), 0.9);
   --color-bg: rgba(var(--rgb-white), 1);
   --color-article-nav-bg: rgba(var(--rgb-black), 0.02);
+  --color-dailog-bg: rgba(var(--rgb-black), 0.3);
 
   --color-white: rgb(var(--rgb-white));
   --color-black: rgb(var(--rgb-black));

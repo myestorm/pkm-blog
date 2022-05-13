@@ -1,0 +1,19 @@
+$--input-prefix: 'input';
+
+.#{$--input-prefix} {
+  @include transition();
+  border: 1px solid var(--color-input-border);
+  border-radius: px2rem(2px);
+  outline: 0;
+  padding: 0 0.5rem;
+  margin: 0;
+  line-height: px2rem(32px);
+  font-size: px2rem(14px);
+  &:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary) inset;
+  }
+  &::placeholder {
+    color: var(--color-text-disabled);
+  }
+}
