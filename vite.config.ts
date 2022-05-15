@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
+import svgLoader from 'vite-svg-loader'
 import prismjs from 'vite-plugin-prismjs'
 import viteEjs from './vite-plugin-ejs'
 
@@ -11,7 +12,7 @@ export default defineConfig({
     plugins: ['toolbar', 'show-language', 'copy-to-clipboard'],
     theme: 'tomorrow',
     css: true
-  })],
+  }), svgLoader()],
   resolve: {
     alias: {
       '@': resolve(__dirname, './src')

@@ -7,6 +7,9 @@ import Prism from 'prismjs'
 
 import $ from 'jquery'
 
+import { createApp } from 'vue'
+import Discuss from '@/components/discuss/index.vue'
+
 $.when( $.ready ).then(() => {
   Prism.highlightAll()
 
@@ -110,4 +113,7 @@ $.when( $.ready ).then(() => {
       isShow = false
     }
   })
+
+  const discuss = createApp(Discuss)
+  discuss.mount('#totonoo-discuss')
 })
