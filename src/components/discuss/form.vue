@@ -5,13 +5,13 @@
         <li>
           <label>
             <span>昵称（必填）</span>
-            <input class="input" />
+            <input class="input" ref="nicknameInput" v-model="nickname" />
           </label>
         </li>
         <li>
           <label>
             <span>邮箱（必填）</span>
-            <input class="input" />
+            <input class="input" ref="emailInput" v-model="email" />
           </label>
         </li>
       </ul>
@@ -21,16 +21,18 @@
         <div class="avatar">
           <img src="/images/user.png">
         </div>
-        <textarea @blur="blurHandler" @focus="focusHandler" placeholder="评论人工审核，请勿发表违规内容、无意义内容。评论时填写正确的邮箱，有人回复你会收到邮件提醒。"></textarea>
+        <textarea @blur="blurHandler" ref="contentInput" @focus="focusHandler" placeholder="评论人工审核，请勿发表违规内容、无意义内容。评论时填写正确的邮箱，有人回复你会收到邮件提醒。" v-model="content"></textarea>
       </div>
       <div class="discuss-btn">
-        <button>提交评论</button>
+        <div class="tips">{{errmsg}}</div>
+        <button :disabled="!posting" @click="submit">提交评论</button>
       </div>
     </div>
   </div>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import $ from 'jquery'
 
 export default defineComponent({
   setup () {
@@ -41,10 +43,67 @@ export default defineComponent({
     const blurHandler = () => {
       isFocus.value = false
     }
+    const nicknameInput = ref()
+    const emailInput = ref()
+    const contentInput = ref()
+    const nickname = ref('')
+    const email = ref('')
+    const content = ref('')
+    const errmsg = ref('')
+    const posting = ref(true)
+    const submit = () => {
+      if (!nickname.value) {
+        errmsg.value = '请填写您的昵称'
+        nicknameInput.value.focus()
+        return false
+      }
+      if (!email.value) {
+        errmsg.value = '请填写您的邮箱'
+        emailInput.value.focus()
+        return false
+      }
+      if (!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(email.value)) {
+        errmsg.value = '请填写正确的邮箱'
+        emailInput.value.focus()
+        return false
+      }
+      if (!content.value) {
+        errmsg.value = '总得说点什么'
+        contentInput.value.focus()
+        return false
+      }
+      errmsg.value = ''
+      posting.value = false
+      $.post('/mock/discuss.json', {
+        nickname: nickname.value,
+        email: email.value,
+        content: nickname.value
+      }).done(res => {
+        const code = +res.code
+        if (code !== 0) {
+          errmsg.value = res.msg
+        } else {
+          content.value = ''
+        }
+      }).fail(_ => {
+        errmsg.value = '提交失败'
+      }).always(() => {
+        posting.value = true
+      })
+    }
     return {
       isFocus,
       focusHandler,
-      blurHandler
+      blurHandler,
+      nickname,
+      email,
+      content,
+      errmsg,
+      posting,
+      submit,
+      nicknameInput,
+      emailInput,
+      contentInput
     }
   }
 })
@@ -80,6 +139,10 @@ export default defineComponent({
       &::placeholder {
         color: var(--color-text-disabled);
       }
+      &.error {
+        border-color: var(--color-error);
+        box-shadow: 0 0 0 1px var(--color-error) inset;
+      }
     }
   }
   &-form-say {
@@ -114,10 +177,14 @@ export default defineComponent({
     }
     .discuss-btn {
       border-top: 0 solid var(--color-border);
-      text-align: right;
       background-color: rgba(var(--rgb-black), 0.02);
       height: px2rem(34px);
       position: relative;
+      .tips {
+        color: var(--color-error);
+        padding: 0 0 0 1rem;
+        line-height: px2rem(34px);
+      }
       button {
         background-color: var(--color-primary);
         color: var(--color-white);
@@ -127,7 +194,11 @@ export default defineComponent({
         padding: 0 1.5rem;
         position: absolute;
         right: -2px;
-        top: 0
+        top: 0;
+        &[disabled] {
+          opacity: 0.4;
+          cursor: not-allowed;
+        }
       }
     }
   }
