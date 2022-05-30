@@ -15,7 +15,8 @@ export default defineConfig({
   }), svgLoader()],
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src')
+      '@': resolve(__dirname, './src'),
+      '@icons': resolve(__dirname, './fragments/icons')
     },
   },
   css: {

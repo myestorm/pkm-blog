@@ -14,7 +14,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import $ from 'jquery'
-import IconRemove from '../../../fragments/icons/remove.svg?component'
+import IconRemove from '@icons/remove.svg?component'
 import DiscussForm from './form.vue'
 import ListComponent, { IDiscussType } from './list.vue'
 

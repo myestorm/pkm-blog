@@ -1,0 +1,41 @@
+body {
+  --rgb-white: 255,255,255;
+  --rgb-black: 0,0,0;
+  --rgb-primary: 0,152,68;
+  --rgb-anti: 255,96,0;
+  --rgb-border: 243,245,247;
+  --rgb-body-bg: 243,245,247;
+  --rgb-text: 34,34,34;
+
+  --color-primary: rgb(var(--rgb-primary));
+  --color-anti: rgb(var(--rgb-anti));
+  --color-error: rgba(255,0,0, 0.8);
+
+  --color-text: rgba(var(--rgb-text), 1);
+  --color-text-secondary: rgba(var(--rgb-text), 0.7);
+  --color-text-third: rgba(var(--rgb-text), 0.52);
+  --color-text-disabled: rgba(var(--rgb-text), 0.16);
+
+  --color-border: rgb(var(--rgb-border));
+  --color-input-border: rgba(var(--rgb-black), 0.08);
+
+  --color-body-bg: rgb(var(--rgb-body-bg));
+  --color-body-bg-white: rgb(var(--rgb-white));
+  --color-header-bg: rgba(var(--rgb-white), 0.9);
+  --color-bg: rgba(var(--rgb-white), 1);
+  --color-article-nav-bg: rgba(var(--rgb-black), 0.02);
+  --color-dailog-bg: rgba(var(--rgb-black), 0.3);
+
+  --color-white: rgb(var(--rgb-white));
+  --color-black: rgb(var(--rgb-black));
+
+  &[#{$--prefix}-theme=dark] {
+    --rgb-text: 254,254,254;
+    --rgb-body-bg: 34,34,34;
+    --rgb-border: 68,68,68;
+
+    --color-header-bg: rgba(var(--rgb-black), 0.9);
+    --color-body-bg-white: rgb(var(--rgb-black));
+    --color-bg: rgba(var(--rgb-black), 1);
+  }
+}

@@ -10,7 +10,7 @@ $.when($.ready).then(() => {
     content.css({
       opacity: 0,
       transform: 'scale(0)',
-      transition: 'all 300ms ease'
+      transition: `all ${duration}ms ease`
     })
     ele.addClass('show')
     setTimeout(() => {

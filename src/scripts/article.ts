@@ -1,4 +1,4 @@
-import '@/scss/vendor.scss'
+import '@/scripts/vendor'
 import '@/scss/blocks/github-markdown.scss'
 import '@/scss/blocks/article-nav.scss'
 import '@/scss/article.scss'

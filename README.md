@@ -1,16 +1,41 @@
-# Vue 3 + TypeScript + Vite
+# pkm-blog
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+一套完整的blog静态页面模板。支持明暗模式。响应式页面。
 
-## Recommended IDE Setup
+## 安装
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+```sh
+npm install # 安装依赖
+npm run dev # 本地开发服务
+npm run build # 打包页面
+```
 
-## Type Support For `.vue` Imports in TS
+## 基本目录结构定义
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+> 基本框架有2个，jquery和vue。脚手架使用的是vite。可以理解为多页应用。  
+> html模板语法采用的ejs，意味着html片段可以用include的方式通用。svg也是一段html片段。  
+> 但是有些页面必定是单页模式，如用户中心。可以理解为需要直接展示的内容是纯粹的html，需要大量交互的位置使用的vue。  
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
-
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+```sh
+|-- about
+|---- index.html # 关于我们
+|-- article
+|---- index.html # 文章内容
+|-- fragments
+|---- icons # svg图标
+|---- **/*.html # html代码片段
+|-- public
+|---- **/*.* # 公共的静态资源
+|-- src # css和js 源码目录
+|---- components # vue组件
+|---- scripts # vue组件
+|------ components # 组件功能js
+|------ utils
+|------ *.ts # 页面功能js
+|---- scss # 样式
+|------ base # 基础的样式
+|------ block # 业务块样式
+|------ components # 组件样式
+|------ *.scss # 页面样式
+|-- index.html # 首页
+```
