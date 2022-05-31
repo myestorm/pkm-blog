@@ -4,6 +4,7 @@
   line-height: px2rem(64px);
   &-ul {
     @include center();
+    flex-wrap: wrap;
     gap: 2rem;
     li {
       a {
@@ -35,5 +36,42 @@
   &-ul + &-ul {
     border-top: 1px solid var(--color-border);
     line-height: px2rem(48px);
+  }
+}
+.btn-sub-nav-menu {
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .btn-sub-nav-menu {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0.25rem;
+    color: var(--color-white);
+  }
+  .sub-nav {
+    width: 60vw;
+    display: none;
+    position: absolute;
+    right: 2.5rem;
+    top: 0.25rem;
+    z-index: $--max-zindex;
+    padding: 0 1rem;
+    line-height: px2rem(32px);
+    &-ul {
+      gap: 0.5rem;
+      align-items: flex-start;
+      &.top {
+        .current {
+          &::before, &::after {
+            display: none;
+          }
+        }
+      }
+    }
+    &-ul + &-ul {
+      line-height: px2rem(32px);
+    }
   }
 }

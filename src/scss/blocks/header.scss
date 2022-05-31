@@ -33,10 +33,14 @@
       }
     }
   }
+  .btn-top-menu {
+    display: none;
+  }
   .nav {
     height: 100%;
     .nav-ul {
       @include center();
+      flex-wrap: wrap;
       height: 100%;
       li {
         margin: 0 px2rem(8px);
@@ -129,6 +133,30 @@
         &:hover {
           color: var(--color-primary);
         }
+      }
+    }
+  }
+}
+@media screen and (max-width: 720px) {
+  .#{$--prefix}-site-header {
+    .btn-top-menu {
+      @include center();
+      height: 100%;
+      margin-left: px2rem(80px);
+      .icon-menu {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+    .nav {
+      .nav-ul {
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: var(--color-header-bg);
+        backdrop-filter: saturate(180%) blur(6px);
+        display: none;
       }
     }
   }

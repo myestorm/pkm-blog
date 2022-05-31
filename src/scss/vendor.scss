@@ -91,7 +91,7 @@ body {
   .container {
     width: 100%;
     // max-width: px2rem(1200px);
-    // padding: 0 4vw;
+    padding: 0 0.5rem;
     max-width: px2rem(980px);
     margin: auto;
   }
@@ -126,7 +126,7 @@ body {
     }
     .cover-content {
       position: relative;
-      z-index: 2;
+      z-index: 4;
     }
     .breadcrumbs {
       li {
@@ -172,6 +172,16 @@ body {
         &:hover {
           color: rgba(var(--rgb-black), 1);
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .#{$--prefix}-page {
+    .page-header {
+      .cover {
+        height: 100%;
       }
     }
   }
