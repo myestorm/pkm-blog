@@ -121,7 +121,18 @@ export default defineComponent({
     }
     ul {
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
+    }
+    li label {
+      display: flex;
+      align-items: center;
+      > span {
+        white-space: nowrap;
+      }
+      .input {
+        flex: 1;
+      }
     }
     .input {
       @include transition();

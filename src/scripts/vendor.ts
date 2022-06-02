@@ -1,4 +1,3 @@
-import '@/scss/vendor.scss'
 import './components/btn-ripple'
 import './components/dailog'
 
@@ -12,26 +11,26 @@ $.when( $.ready ).then(() => {
   themeSwitch.mount('.theme-switch')
   $('.btn-top-menu').on('click', function () {
     const nav = $(this).next('.nav-ul')
-    if (nav.is(':hidden')) {
-      nav.css('display', 'flex')
+    if (nav.hasClass('show')) {
+      nav.removeClass('show')
     } else {
-      nav.hide()
+      nav.addClass('show')
     }
   })
   $('.btn-sub-nav-menu').on('click', function () {
     const nav = $(this).next('.sub-nav')
-    if (nav.is(':hidden')) {
-      nav.show()
+    if (nav.hasClass('show')) {
+      nav.removeClass('show')
     } else {
-      nav.hide()
+      nav.addClass('show')
     }
   })
   $(window).on('resize', (event) => {
     const _nav = $('.btn-top-menu').next('.nav-ul')
     if (document.body.clientWidth > 720) {
-      _nav.css('display', 'flex')
+      _nav.addClass('show')
     } else {
-      _nav.css('display', 'none')
+      _nav.removeClass('show')
     }
   })
 })

@@ -1,0 +1,11 @@
+.icon {
+  width: 1rem;
+  height: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  @include sizes($--def-sizes, false);
+  svg {
+    margin-top: -2px;
+  }
+}

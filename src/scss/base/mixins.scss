@@ -24,7 +24,7 @@
 };
 
 @mixin transition ($property: all) {
-  transition: $property 300ms ease;
+  transition: $property 240ms ease;
 };
 
 @mixin link-hover-line () {

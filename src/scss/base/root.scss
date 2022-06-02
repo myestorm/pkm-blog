@@ -1,13 +1,22 @@
 body {
-  --rgb-white: 255,255,255;
-  --rgb-black: 0,0,0;
-  --rgb-primary: 0,152,68;
+  --rgb-primary: 0,152,68; // 主要
+  --rgb-secondary: 0,152,68; // 次要
+  --rgb-accent: 255,96,0; // 突出
+  --rgb-error: 255,82,82; // 错误
+  --rgb-info: 33,150,243; // 提示
+  --rgb-success: 76,175,80; // 成功
+  --rgb-warning: 251,140,0; // 警告
+  --rgb-text: 34,34,34; // 文字
+  --rgb-border: 243,245,247; // 边框
+  --rgb-white: 255,255,255; // 白色
+  --rgb-black: 0,0,0; // 黑色
+
   --rgb-anti: 255,96,0;
   --rgb-border: 243,245,247;
   --rgb-body-bg: 243,245,247;
-  --rgb-text: 34,34,34;
 
   --color-primary: rgb(var(--rgb-primary));
+  --color-accent: rgb(var(--rgb-accent));
   --color-anti: rgb(var(--rgb-anti));
   --color-error: rgba(255,0,0, 0.8);
 

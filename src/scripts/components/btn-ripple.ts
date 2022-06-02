@@ -1,7 +1,7 @@
 import $ from 'jquery'
 
 $.when($.ready).then(() => {
-  const className = '.btn-ripple'
+  const className = '.btn--ripple'
   const duration = 600
   $('body').on('click', className, function (e) {
     const btn = $(this)

@@ -1,0 +1,28 @@
+@import "./vendor.scss";
+
+.app-document {
+  padding: 1rem 2rem;
+  .item {
+    padding-bottom: 1rem;
+    h2 {
+      padding-bottom: 0.5rem;
+    }
+    .content {
+      display: flex;
+      align-items: flex-start;
+      background-color: #ffffff;
+      border: 1px #ddd solid;
+      padding: 1rem;
+    }
+    .demo {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+    .code {
+      width: 600px;
+    }
+  }
+}

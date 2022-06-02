@@ -1,0 +1,28 @@
+$--link-prefix: 'link';
+
+.#{$--link-prefix} {
+  @include transition(color);
+  @include sizes();
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: px2rem(14px);
+  border: 1px dotted transparent;
+  padding: 0 2px;
+  &:hover {
+    color: var(--color-primary);
+  }
+  &:active {
+    border-color: currentColor;
+  }
+  &--primary {
+    color: var(--color-primary);
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+  &--disabled {
+    opacity: 0.4;
+  }
+}

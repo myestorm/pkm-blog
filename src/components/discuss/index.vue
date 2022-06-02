@@ -38,8 +38,14 @@ export default defineComponent({
       const discussBoxRect = discussBox.getBoundingClientRect()
       const target = event.target as HTMLElement
       const rect = target.getBoundingClientRect()
-      styles.value.top = Math.abs(rect.top - discussBoxRect.top) + 'px'
-      styles.value.left = Math.abs(rect.left - discussBoxRect.left + rect.width + 12) + 'px'
+      const left = Math.abs(rect.left - discussBoxRect.left + rect.width + 12)
+      const top = Math.abs(rect.top - discussBoxRect.top)
+      styles.value.top = top + 'px'
+      styles.value.left = left + 'px'
+      if (left > document.body.clientWidth * 0.5) {
+        styles.value.top = (top + rect.height + 6) + 'px'
+        styles.value.left = 20 + 'px'
+      }
       level.value = item.level
       visiable.value = true
     }

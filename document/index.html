@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基础文档</title>
+  </head>
+  <body>
+    <div class="app-document">
+      <div class="item">
+        <h2>链接 Link</h2>
+        <div class="content">
+          <div class="demo">
+            <a href="/" class="link">LINK</a>
+            <a href="/article" class="link link--primary" size="12">LINK</a>
+            <a href="#" class="link link--disabled" size="14">LINK</a>
+            <a href="#" class="link" size="16">LINK</a>
+            <a href="#" class="link" size="18">LINK</a>
+            <a href="#" class="link" size="20">LINK</a>
+          </div>
+          <textarea class="code" rows="6"></textarea>
+        </div>
+      </div>
+      <div class="item">
+        <h2>按钮 Button</h2>
+        <div class="content">
+          <div class="demo">
+            <button class="btn">确定</button>
+            <button class="btn" disabled>确定</button>
+            <button class="btn btn--ripple btn--primary btn--small">确定</button>
+            <button class="btn btn--ripple btn--primary">确定</button>
+            <button class="btn btn--primary-outline">确定</button>
+            <button class="btn btn--ripple btn--primary btn--large">确定</button>
+            <button class="btn btn--ripple btn--primary btn--large" disabled>确定</button>
+            <button class="btn btn--ripple btn--primary btn--large">
+              <i class="icon icon-remove" size="12">
+                <%- include('../fragments/icons/remove.svg') %>
+              </i>
+              删除
+            </button>
+            <button class="btn btn--ripple btn--primary btn--small">
+              <i class="icon icon-remove">
+                <%- include('../fragments/icons/remove.svg') %>
+              </i>
+              删除
+            </button>
+            <button class="btn btn--ripple btn--primary btn--circle btn--large">
+              <i class="icon icon-remove">
+                <%- include('../fragments/icons/remove.svg') %>
+              </i>
+            </button>
+            <button class="btn btn--ripple btn--search">
+              <i class="icon icon-search">
+                <%- include('../fragments/icons/search.svg') %>
+              </i>
+              搜索
+            </button>
+          </div>
+          <textarea class="code" rows="6"></textarea>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/scripts/document.ts"></script>
+  </body>
+</html>
