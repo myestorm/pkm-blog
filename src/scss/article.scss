@@ -1,3 +1,7 @@
+@import "./vendor.scss";
+@import "./blocks/github-markdown.scss";
+@import "./blocks/article-nav.scss";
+
 .document-reader {
   margin-top: 2rem;
   word-break: break-all;

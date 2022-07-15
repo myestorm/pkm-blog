@@ -38,5 +38,8 @@ export default defineConfig({
         about: resolve(__dirname, 'about/index.html')
       }
     }
+  },
+  server: {
+    port: 3000
   }
 })

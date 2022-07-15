@@ -40,3 +40,16 @@
     }
   }
 }
+
+@media screen and (max-width: 468px) {
+  .pagination {
+    &-ul {
+      gap: 0.3rem;
+      li {
+        a, span {
+          padding: 0.3rem 0.7rem;
+        }
+      }
+    }
+  }
+}
